@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>replit</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <p style="text-align: center; margin-top: 50px;">Download Steampunk Project</p>
+
+    <div style="position: absolute; top: 20px; left: 0; font-weight: bold; color: purple;">Braedon@Horizon</div>
+    
+    <button style="text-align: center; margin: 0 auto; display: block; border: 2px solid purple; border-radius: 5px;" onclick="showMenu()">Download Game Files Here</button>
+
+    <div id="menu" style="display: none;">
+        <h2>Select Game to Download:</h2>
+        <ul>
+            <li><a href="game1.zip">Game 1</a></li>
+            <li><a href="game2.zip">Game 2</a></li>
+            <li><a href="game3.zip">Game 3</a></li>
+        </ul>
+    </div>
+
+    <script>
+        function downloadFiles() {
+            const zipFileUrl = 'Test Build.zip';
+            const link = document.createElement('a');
+            link.href = zipFileUrl;
+            link.download = 'game1.zip';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            alert("Files downloaded!");
+            alert('Unzip the files to play the game, then click on the game name.exe file to run')
+        }
+
+        function showMenu() {
+            document.getElementById('menu').style.display = 'block';
+        }
+
+        document.querySelector('button').addEventListener('click', showMenu);
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>
