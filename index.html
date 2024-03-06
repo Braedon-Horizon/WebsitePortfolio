@@ -9,27 +9,19 @@
 </head>
 
 <body>
-    <p style="text-align: center; margin-top: 50px;">Download Steampunk Project</p>
-
-    <div style="position: absolute; top: 20px; left: 0; font-weight: bold; color: purple;">Braedon@Horizon</div>
-    
-    <button style="text-align: center; margin: 0 auto; display: block; border: 2px solid purple; border-radius: 5px;" onclick="showMenu()">Download Game Files Here</button>
-
-    <div id="menu" style="display: none;">
-        <h2>Select Game to Download:</h2>
-        <ul>
-            <li><a href="game1.zip">Game 1</a></li>
-            <li><a href="game2.zip">Game 2</a></li>
-            <li><a href="game3.zip">Game 3</a></li>
-        </ul>
-    </div>
+    <p style="text-align: center;">Download Steampunk Project</p>
+    <br />
+    <div style="position: absolute; top: 0; left: 0; font-weight: bold; color: purple;">Braedon@Horizon</div>
+    <button style="text-align: center; margin: 0 auto; display: block; border: 2px solid purple; border-radius: 5px;">Download Game Files Here</button>
 
     <script>
         function downloadFiles() {
+            // Add your download logic here
+            // Assuming the zip file URL is stored in a variable named 'zipFileUrl'
             const zipFileUrl = 'Test Build.zip';
             const link = document.createElement('a');
             link.href = zipFileUrl;
-            link.download = 'game1.zip';
+            link.download = 'gameFiles.zip';
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
@@ -37,11 +29,7 @@
             alert('Unzip the files to play the game, then click on the game name.exe file to run')
         }
 
-        function showMenu() {
-            document.getElementById('menu').style.display = 'block';
-        }
-
-        document.querySelector('button').addEventListener('click', showMenu);
+        document.querySelector('button').addEventListener('click', downloadFiles);
     </script>
     <script src="script.js"></script>
 </body>
