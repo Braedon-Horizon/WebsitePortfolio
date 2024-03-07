@@ -1,26 +1,36 @@
-    body {
-        background: linear-gradient(to bottom, #1a1a1a, #333);
-        font-family: Arial, sans-serif;
-        color: #f0f0f0;
-        margin: 0;
-        padding: 0;
-    }
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    color: #f3e9e9;
+    font-family: Arial, sans-serif;
+}
 
-    p {
-        text-align: center;
-        font-size: 1.5em;
-        color: #f0f0f0;
-    }
+body {
+    background: linear-gradient(to top, #1a0000, #4a0000); 
+    background-size: cover;
+    transition: background 0.5s ease; /* Added transition property */
+}
 
-    button {
-        background-color: #333;
-        color: #f0f0f0;
-        border: 2px solid #333;
-        border-radius: 5px;
-        padding: 10px 20px;
-        cursor: pointer;
-    }
+h1, h2, h3, h4, h5, h6 {
+    color: #ffffff;
+    font-weight: bold;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
 
-    h1, h2, h3, h4, h5, h6 {
-        font-weight: bold;
-    }
+p {
+    color: #666666;
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+a {
+    color: #666666;
+    text-decoration: none;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+a:hover {
+    color: #ff3333;
+}
