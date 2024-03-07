@@ -1,6 +1,5 @@
-
     body {
-        background-color: #333;
+        background: linear-gradient(to bottom, #1a1a1a, #333);
         font-family: Arial, sans-serif;
         color: #f0f0f0;
         margin: 0;
@@ -20,4 +19,8 @@
         border-radius: 5px;
         padding: 10px 20px;
         cursor: pointer;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-weight: bold;
     }
