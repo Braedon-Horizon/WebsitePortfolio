@@ -9,7 +9,7 @@ html, body {
 body {
     background: linear-gradient(to top, #1a0000, #4a0000); 
     background-size: cover;
-    transition: background 0.5s ease; /* Added transition property */
+    transition: background 0.5s ease;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -33,4 +33,76 @@ a {
 
 a:hover {
     color: #ff3333;
+}
+
+@keyframes flipIn {
+    0% {
+        transform: perspective(400px) rotateY(-90deg);
+        opacity: 0;
+    }
+    100% {
+        transform: perspective(400px) rotateY(0);
+        opacity: 1;
+    }
+}
+
+.employee-card {
+    background-color: #1c0a0a;
+    color: #f0f0f0;
+    width: 300px;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.19), 0px 6px 6px rgba(0, 0, 0, 0.23);
+    perspective: 1000px;
+}
+
+.card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transition: transform 1s;
+}
+
+.card-face-front {
+    animation: flipIn 1s ease-out both;
+}
+
+.card-face-back {
+    transform: rotateY(180deg);
+}
+
+.employee-card:nth-child(2) .card-face-front {
+    animation-delay: 2s;
+}
+
+.employee-card:nth-child(3) .card-face-front {
+    animation-delay: 4s;
+}
+
+.employee-card:nth-child(4) .card-face-front {
+    animation-delay: 6s;
+}
+
+.employee-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.employee-name {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.employee-title {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.employee-description {
+    font-size: 16px;
 }

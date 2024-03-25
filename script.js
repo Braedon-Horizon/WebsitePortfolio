@@ -15,3 +15,4 @@ animation.innerHTML = `
 
 // Append the animation to the document head
 document.head.appendChild(animation);
+document.querySelector('.employee-card').classList.add('flip');
