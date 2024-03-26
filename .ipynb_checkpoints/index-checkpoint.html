@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: #4b0000;
+            color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        .download-button {
+            background: linear-gradient(to right, #8b0000, #4b0000);
+            border: none;
+            color: #f0f0f0;
+            padding: 20px 80px;
+            border-radius: 30px;
+            outline: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 24px;
+        }
+
+        .download-button:hover {
+            transform: scale(1.1);
+        }
+
+        .download-button:not(.animating) {
+            animation: none;
+        }
+
+        .navbar {
+            background-color: #1c0a0a;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            animation: slideInDown 1s ease;
+        }
+
+        .navbar a {
+            color: #f0f0f0;
+            text-decoration: none;
+            margin: 0 10px;
+            animation: fadeIn 1s ease;
+        }
+
+        .navbar a:hover {
+                text-decoration: underline;
+                transition: color 0.3s;
+            }
+
+            .navbar a:hover {
+                color: #ff0000;
+            }
+
+        h1 {
+            text-align: center;
+            animation: fadeIn 1s ease;
+        }
+
+        .download-button-container {
+            display: flex;
+            justify-content: center;
+            animation: slideInUp 1s ease;
+            text-align: center; /* Added CSS property */
+        }
+
+        .download-button-container button {
+            animation: pulse 1s infinite;
+        }
+
+        .contact-us-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            animation: slideInUp 1s ease;
+        }
+
+        .contact-us-container form {
+            width: 50%;
+        }
+
+        @keyframes slideInDown {
+            0% {
+                transform: translateY(-100%);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInUp {
+            0% {
+                transform: translateY(100%);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* BEGIN: Additional Animations */
+        @keyframes slideInLeft {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInUpDelay {
+            0% {
+                transform: translateY(100%);
+            }
+            50% {
+                transform: translateY(100%);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInDelay {
+            0% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Additional Animations */
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes scaleIn {
+            0% {
+                transform: scale(0);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes slideInFromTop {
+            0% {
+                transform: translateY(-100%);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInFromBottom {
+            0% {
+                transform: translateY(100%);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div style="display: flex; justify-content: center; width: 100%;">
+                <a href="index.html">Home</a>
+                <a href="aboutUs.html">About Us</a>
+                <a href="timeShooterGame.zip" download>Download</a>
+            </div>
+        </div>
+        <h1 style="text-align: center;">Welcome to the offical [game name] website!</h1>
+    </header>
+    <main>
+       
+        <script>
+            function downloadGame1() {
+                var link = document.createElement('a');
+                link.href = 'timeShooterGame.zip';
+                link.download = 'Game Files';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                alert('In order to play the game, you must open file explorer')
+                alert('To extract the downloaded ZIP file, right-click on it and select "Extract All".');
+                document.getElementById('download-button').classList.remove('animating');
+            }
+        </script>
+        
+    </main>
+    <html>
+        <br>
+        <br>
+        <body style="text-align: center;">
+            <style>
+                @keyframes fadeIn {
+                    0% {
+                        opacity: 0;
+                    }
+                    100% {
+                        opacity: 1;
+                    }
+                }
+
+                .animated-text {
+                    animation: fadeIn 1s ease-in-out;
+                    color: rgb(255, 255, 255);
+                }
+            </style>
+
+            <p class="animated-text">Hello, I see that you have made it to my portfolio! I am a 14-year-old developer who  is currently working in Unity to develop 2D games. This portfolio is built to help you understand how games are made in Unity. However, if you would like to download any of my games, just click on the downloads button.</p>
+            <br>
+        </body>
+        <section>
+            <div class="download-button-container">
+                <button id="download-button" class="download-button" onclick="downloadGame1()">Donwload Q4 Project!</button>
+            </div>
+        </section>
+    </html>
+</html>

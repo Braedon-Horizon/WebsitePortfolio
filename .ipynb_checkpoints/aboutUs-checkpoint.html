@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: #4b0000;
+            color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            background-color: #1c0a0a;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            animation: slideInDown 1s ease;
+        }
+
+        .navbar a {
+            color: #f0f0f0;
+            text-decoration: none;
+            margin: 0 10px;
+            animation: fadeIn 1s ease;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #ff0000;
+        }
+
+        h1 {
+            text-align: center;
+            animation: fadeIn 1s ease;
+        }
+
+        @keyframes slideInDown {
+            0% {
+                transform: translateY(-100%);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div style="display: flex; justify-content: center; width: 100%;">
+                <a href="index.html">Home</a>
+                <a href="aboutUs.html">About Us</a>
+                <a href="timeShooterGame.zip" download>Download</a>
+            </div>
+        </div>
+        <h1 style="text-align: center;">About Us</h1>
+        <style>
+            .employee-cards-container {
+                display: flex;
+                justify-content: center;
+            }
+        
+            .employee-card {
+                flex: 1 1 300px;
+                max-width: 300px;
+                height: 400px;
+                perspective: 500px;
+                margin: 10px;
+            }
+        </style>
+
+        <div class="employee-cards-container">
+            <div class="employee-card">
+                <div class="card-face card-face-front">
+                    <img src="goldenRetriever-Aiden.jpg" alt="Aiden Photo" class="employee-photo">
+                    <div class="employee-info">
+                        <h2 class="employee-name">Aiden Duncan</h2>
+                        <h3 class="employee-title">Artist</h3>
+                        <p class="employee-description">We would like to give a special thanks to Aiden for all of the amazing work<br> he did for the art that he made! Without him this project would be nowhere nearly as cool as it is now. </p>
+                    </div>
+                </div>
+                <div class="card-face card-face-back">
+                    <!-- Add content for the back of the card here -->
+                </div>
+            </div>
+
+            <div class="employee-card">
+                <div class="card-face card-face-front">
+                    <img src="employee2.jpg" alt="Employee 2 Photo" class="employee-photo">
+                    <div class="employee-info">
+                        <h2 class="employee-name">Spencer Sims</h2>
+                        <h3 class="employee-title">Developer & Soundtrack Design</h3>
+                        <p class="employee-description">spencer</p>
+                    </div>
+                </div>
+                <div class="card-face card-face-back">
+                    <!-- Add content for the back of the card here -->
+                </div>
+            </div>
+
+            <div class="employee-card">
+                <div class="card-face card-face-front">
+                    <img src="employee3.jpg" alt="Employee 3 Photo" class="employee-photo">
+                    <div class="employee-info">
+                        <h2 class="employee-name">Braedon Stoudt</h2>
+                        <h3 class="employee-title">Lead Developer & Game Design Director</h3>
+                        <p class="employee-description">Vector OH YEA!</p>
+                    </div>
+                </div>
+                <div class="card-face card-face-back">
+                    <!-- Add content for the back of the card here -->
+                </div>
+            </div>
+
+            <div class="employee-card">
+                <div class="card-face card-face-front">
+                    <img src="employee4.jpg" alt="Employee 4 Photo" class="employee-photo">
+                    <div class="employee-info">
+                        <h2 class="employee-name">Jacob Snow</h2>
+                        <h3 class="employee-title">Lead Artist & Map Design</h3>
+                        <p class="employee-description">jacob</p>
+                    </div>
+                </div>
+                <div class="card-face card-face-back">
+                    <!-- Add content for the back of the card here -->
+                </div>
+            </div>
+        </div>
