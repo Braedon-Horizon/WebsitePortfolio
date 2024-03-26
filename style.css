@@ -46,15 +46,29 @@ a:hover {
     }
 }
 
+@keyframes typeWriter {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
 .employee-card {
     background-color: #1c0a0a;
     color: #f0f0f0;
-    max-width: 300px;
+    max-width: 280px;
     padding: 20px;
     margin: 20px;
     border-radius: 10px;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.19), 0px 6px 6px rgba(0, 0, 0, 0.23);
     perspective: 1000px;
+    margin-left: -15px; /* Adjust the value as needed */
+    font-size: 15px; /* Adjust the value as needed */
+    word-wrap: break-word;
+    overflow-wrap: break-word; /* For compatibility with older browsers */
+    text-align: left;
 }
 
 .card-face {
@@ -73,24 +87,66 @@ a:hover {
     transform: rotateY(180deg);
 }
 
-.employee-card:nth-child(2) .card-face-front {
-    animation-delay: 1s;
+.employee-card:hover .card-face-back {
+    transform: rotateY(0);
 }
 
-.employee-card:nth-child(3) .card-face-front {
-    animation-delay: 1s;
+.employee-card:hover .card-face-front {
+    transform: rotateY(-180deg);
 }
 
-.employee-card:nth-child(4) .card-face-front {
-    animation-delay: 1s;
+.employee-card .card-face-front .employee-name,
+.employee-card .card-face-front .employee-title,
+.employee-card .card-face-front .employee-description {
+    width: 100%;
+    overflow: hidden;
+    animation: typeWriter 3s steps(40) forwards;
+}
+
+.employee-card:hover {
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.19), 0px 6px 6px rgba(0, 0, 0, 0.23), 0px 0px 50px rgba(255, 255, 255, 0.5);
 }
 
 .employee-photo {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
     object-fit: cover;
     margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+}
+
+.employee-photo::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.employee-photo:hover {
+    transform: scale(1.2);
+}
+
+.employee-photo:hover::before {
+    opacity: 1;
+}
+
+.employee-photo img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translateZ(50px);
 }
 
 .employee-name {
@@ -104,7 +160,7 @@ a:hover {
 }
 
 .employee-description {
-    font-size: 17px;
-    word-wrap: break-word;
-    overflow-wrap: break-word; /* For compatibility with older browsers */
+    font-size: 16px;
+    line-height: 1.5;
+    margin-top: -6px; /* Adjust the value as needed */
 }
