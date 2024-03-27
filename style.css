@@ -47,18 +47,22 @@ a:hover {
 }
 
 @keyframes typeWriter {
-    from {
-        width: 0;
-    }
-    to {
-        width: 100%;
-    }
+    from { max-width: 0; }
+    to { max-width: 100%; }
+}
+
+.employee-card .card-face-front .employee-name,
+.employee-card .card-face-front .employee-title,
+.employee-card .card-face-front .employee-description {
+    white-space: normal; /* Change this from nowrap to normal */
+    animation: typeWriter 2s steps(40) forwards;
 }
 
 .employee-card {
     background-color: #1c0a0a;
     color: #f0f0f0;
-    max-width: 280px;
+    width: 100vw; /* Set width to 100% of viewport width */
+    height: 100vh; /* Set height to 100% of viewport height */
     padding: 20px;
     margin: 20px;
     border-radius: 10px;
@@ -69,6 +73,10 @@ a:hover {
     word-wrap: break-word;
     overflow-wrap: break-word; /* For compatibility with older browsers */
     text-align: left;
+    display: flex; /* Add flex display */
+    flex-direction: column; /* Arrange elements vertically */
+    justify-content: center; /* Center elements vertically */
+    align-items: center; /* Center elements horizontally */
 }
 
 .card-face {
@@ -100,11 +108,25 @@ a:hover {
 .employee-card .card-face-front .employee-description {
     width: 100%;
     overflow: hidden;
-    animation: typeWriter 3s steps(40) forwards;
+    animation: typeWriter 2s steps(40) forwards;
 }
 
-.employee-card:hover {
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.19), 0px 6px 6px rgba(0, 0, 0, 0.23), 0px 0px 50px rgba(255, 255, 255, 0.5);
+@keyframes jiggle {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+.jiggle {
+    animation: jiggle 0.5s linear;
 }
 
 .employee-photo {
