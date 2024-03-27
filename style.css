@@ -100,7 +100,7 @@ a:hover {
 .employee-card .card-face-front .employee-description {
     width: 100%;
     overflow: hidden;
-    animation: typeWriter 3s steps(40) forwards;
+    animation: typeWriter 2s steps(40) forwards;
 }
 
 .employee-card:hover {
