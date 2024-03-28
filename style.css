@@ -98,6 +98,10 @@ a:hover {
 .employee-card:hover .card-face-back {
     transform: rotateY(0);
 }
+.employee-card:hover .employee-photo {
+    transform: scale(1.2);
+    transition: transform 0.5s ease;
+}
 
 .employee-card:hover .card-face-front {
     transform: rotateY(-180deg);

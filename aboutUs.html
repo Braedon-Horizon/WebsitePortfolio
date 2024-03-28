@@ -56,6 +56,63 @@
                 opacity: 1;
             }
         }
+
+        /* New styles for enhanced interactivity */
+        .employee-card:hover .card-face-front {
+            transform: rotateY(180deg);
+        }
+
+        .employee-card:hover .card-face-back {
+            transform: rotateY(0);
+        }
+
+        .card-face {
+            position: absolute;
+            transition: transform 0.5s ease;
+        }
+
+        .employee-card {
+            position: relative;
+            perspective: 500px;
+            margin: 10px;
+            transform-style: preserve-3d;
+            transition: transform 0.5s ease;
+        }
+
+        .employee-card:hover {
+            transform: translateY(-10px);
+.employee-card:hover img,
+.employee-card:hover .card-face-front {
+    transform: scale(1.2);
+    transition: transform 0.5s ease;
+}
+        }
+
+        .employee-card:nth-child(odd) {
+            animation: slideInLeft 1s ease;
+        }
+
+        .employee-card:nth-child(even) {
+            animation: slideInRight 1s ease;
+        }
+
+        @keyframes slideInLeft {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
     </style>
 </head>
 <body>
@@ -127,7 +184,7 @@
 
             <div class="employee-card">
                 <div class="card-face card-face-front">
-                    <img src="jacob-dog photo.jpg" alt="Jacob Photo" class="employee-photo">
+                    <img src="jacob dog photo.jpg" alt="Jacob Photo" class="employee-photo">
                     <div class="employee-info">
                         <h2 class="employee-name">Jacob Snow</h2>
                         <h3 class="employee-title">Lead Artist & Map Design</h3>
