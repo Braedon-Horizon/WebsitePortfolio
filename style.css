@@ -1,82 +1,162 @@
+/* General Styles */
 html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    color: #f3e9e9;
-    font-family: Arial, sans-serif;
+    color: #fffec8;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #2b3a2b;
+    overflow: hidden;
+    position: relative;
 }
 
-body {
-    background: linear-gradient(to top, #1a0000, #4a0000); 
-    background-size: cover;
-    transition: background 0.5s ease;
+/* Animated Background Canvas */
+#background-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    color: #ffffff;
-    font-weight: bold;
-    font-family: "Segoe UI", Arial, sans-serif;
+/* Navbar Styling */
+.navbar {
+    background-color: rgba(60, 79, 60, 0.9);
+    padding: 15px 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
 
-p {
-    color: #666666;
+.navbar a {
+    color: #fffec8;
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #ffeb3b;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 64px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px #000000;
+}
+
+.hero p {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.hero-button {
+    padding: 15px 40px;
+    background: linear-gradient(45deg, #ffd700, #ffc107);
+    border: none;
+    border-radius: 25px;
+    color: #2b3a2b;
+    font-size: 20px;
+    cursor: pointer;
+    transition: transform 0.3s, background 0.3s;
+    text-decoration: none;
+}
+
+.hero-button:hover {
+    transform: scale(1.05);
+    background: linear-gradient(45deg, #ffc107, #ffd700);
+}
+
+/* Features Section */
+.features {
+    padding: 60px 30px;
+    text-align: center;
+    background-color: rgba(60, 79, 60, 0.9);
+}
+
+.features h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #ffeb3b;
+}
+
+.feature-list {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.feature-item {
+    background-color: #4d6652;
+    padding: 20px;
+    border-radius: 15px;
+    width: 300px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(255, 235, 59, 0.5);
+}
+
+.feature-item h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #ffeb3b;
+}
+
+.feature-item p {
     font-size: 16px;
     line-height: 1.5;
-    font-family: "Segoe UI", Arial, sans-serif;
 }
 
-a {
-    color: #666666;
-    text-decoration: none;
-    font-family: "Segoe UI", Arial, sans-serif;
-}
-
-a:hover {
-    color: #ff3333;
-}
-
-@keyframes flipIn {
-    0% {
-        transform: perspective(400px) rotateY(-90deg);
-        opacity: 0;
-    }
-    100% {
-        transform: perspective(400px) rotateY(0);
-        opacity: 1;
-    }
-}
-
-@keyframes typeWriter {
-    from { max-width: 0; }
-    to { max-width: 100%; }
-}
-
-.employee-card .card-face-front .employee-name,
-.employee-card .card-face-front .employee-title,
-.employee-card .card-face-front .employee-description {
-    white-space: normal; /* Change this from nowrap to normal */
-    animation: typeWriter 2s steps(40) forwards;
+/* Employee Cards */
+.employee-cards-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 40px 30px;
+    background-color: #2b3a2b;
 }
 
 .employee-card {
-    background-color: #1c0a0a;
-    color: #f0f0f0;
-    width: 100vw; /* Set width to 100% of viewport width */
-    height: 100vh; /* Set height to 100% of viewport height */
-    padding: 20px;
+    background-color: #3c4f3c;
+    color: #fffec8;
+    width: 300px;
+    height: 400px;
     margin: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.19), 0px 6px 6px rgba(0, 0, 0, 0.23);
+    border-radius: 15px;
     perspective: 1000px;
-    margin-left: -15px; /* Adjust the value as needed */
-    font-size: 15px; /* Adjust the value as needed */
-    word-wrap: break-word;
-    overflow-wrap: break-word; /* For compatibility with older browsers */
-    text-align: left;
-    display: flex; /* Add flex display */
-    flex-direction: column; /* Arrange elements vertically */
-    justify-content: center; /* Center elements vertically */
-    align-items: center; /* Center elements horizontally */
+    position: relative;
+    transition: transform 0.6s;
+}
+
+.employee-card:hover {
+    transform: rotateY(180deg);
 }
 
 .card-face {
@@ -84,109 +164,209 @@ a:hover {
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
-    transition: transform 1s;
+    border-radius: 15px;
+    overflow: hidden;
 }
 
 .card-face-front {
-    animation: flipIn 1s ease-out both;
+    background-color: #3c4f3c;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .card-face-back {
+    background-color: #ffd700;
+    color: #2b3a2b;
     transform: rotateY(180deg);
-}
-
-.employee-card:hover .card-face-back {
-    transform: rotateY(0);
-}
-.employee-card:hover .employee-photo {
-    transform: scale(1.2);
-    transition: transform 0.5s ease;
-}
-
-.employee-card:hover .card-face-front {
-    transform: rotateY(-180deg);
-}
-
-.employee-card .card-face-front .employee-name,
-.employee-card .card-face-front .employee-title,
-.employee-card .card-face-front .employee-description {
-    width: 100%;
-    overflow: hidden;
-    animation: typeWriter 2s steps(40) forwards;
-}
-
-@keyframes jiggle {
-    0% { transform: translate(1px, 1px) rotate(0deg); }
-    10% { transform: translate(-1px, -2px) rotate(-1deg); }
-    20% { transform: translate(-3px, 0px) rotate(1deg); }
-    30% { transform: translate(3px, 2px) rotate(0deg); }
-    40% { transform: translate(1px, -1px) rotate(1deg); }
-    50% { transform: translate(-1px, 2px) rotate(-1deg); }
-    60% { transform: translate(-3px, 1px) rotate(0deg); }
-    70% { transform: translate(3px, 1px) rotate(-1deg); }
-    80% { transform: translate(-1px, -1px) rotate(1deg); }
-    90% { transform: translate(1px, 2px) rotate(0deg); }
-    100% { transform: translate(1px, -2px) rotate(-1deg); }
-}
-
-.jiggle {
-    animation: jiggle 0.5s linear;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
 }
 
 .employee-photo {
-    width: 200px;
-    height: 200px;
-    border-radius: 20px;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
     object-fit: cover;
     margin-bottom: 20px;
-    position: relative;
-    overflow: hidden;
-    transform-style: preserve-3d;
     transition: transform 0.5s;
 }
 
-.employee-photo::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    opacity: 0;
-    transition: opacity 0.5s;
-}
-
 .employee-photo:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 
-.employee-photo:hover::before {
-    opacity: 1;
-}
-
-.employee-photo img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transform: translateZ(50px);
+.employee-info {
+    padding: 0 20px;
 }
 
 .employee-name {
-    font-size: 24px;
+    font-size: 22px;
     margin-bottom: 10px;
 }
 
 .employee-title {
     font-size: 18px;
-    margin-bottom: 20px;
+    color: #ffeb3b;
+    margin-bottom: 15px;
 }
 
 .employee-description {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.card-face-back p {
     font-size: 16px;
-    line-height: 1.5;
-    margin-top: -6px; /* Adjust the value as needed */
+}
+
+/* Custom Shaders and Effects */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('particle-bg.png') repeat;
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,235,59,0.2), transparent);
+    animation: rotateBackground 20s linear infinite;
+}
+
+@keyframes rotateBackground {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Cursor and Particle Effects */
+.cursor {
+    width: 20px;
+    height: 20px;
+    background-color: rgba(255, 235, 59, 0.8);
+    border-radius: 50%;
+    position: absolute;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: background-color 0.2s, transform 0.1s;
+    z-index: 10000;
+}
+
+.particle {
+    width: 8px;
+    height: 8px;
+    background-color: #ffeb3b;
+    border-radius: 50%;
+    position: absolute;
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+/* Instructions Modal */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 2000; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.8); 
+    animation: fadeIn 0.5s;
+}
+
+.modal-content {
+    background-color: #3c4f3c;
+    margin: 10% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+    max-width: 600px;
+    border-radius: 10px;
+    color: #fffec8;
+    animation: slideInUp 0.5s;
+}
+
+.close-button {
+    color: #ffeb3b;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #fff;
+    text-decoration: none;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes slideInUp {
+    from {transform: translateY(100%);}
+    to {transform: translateY(0);}
+}
+
+/* Additional Styles for Button Particles */
+.particle-effect {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: #ffeb3b;
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .feature-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar a {
+        margin: 0 10px;
+        font-size: 16px;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .hero p {
+        font-size: 20px;
+    }
+
+    .feature-item {
+        width: 80%;
+    }
+
+    .employee-card {
+        width: 80%;
+        height: auto;
+    }
 }

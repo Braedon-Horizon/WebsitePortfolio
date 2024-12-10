@@ -2,197 +2,36 @@
 <html>
 <head>
     <link rel="stylesheet" href="style.css">
-    <style>
-        body {
-            background-color: #4b0000;
-            color: #f0f0f0;
-            font-family: Arial, sans-serif;
-        }
-
-        .navbar {
-            background-color: #1c0a0a;
-            padding: 10px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            animation: slideInDown 1s ease;
-        }
-
-        .navbar a {
-            color: #f0f0f0;
-            text-decoration: none;
-            margin: 0 10px;
-            animation: fadeIn 1s ease;
-        }
-
-        .navbar a:hover {
-            text-decoration: underline;
-            transition: color 0.3s;
-        }
-
-        .navbar a:hover {
-            color: #ff0000;
-        }
-
-        h1 {
-            text-align: center;
-            animation: fadeIn 1s ease;
-        }
-
-        @keyframes slideInDown {
-            0% {
-                transform: translateY(-100%);
-            }
-            100% {
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-            }
-            100% {
-                opacity: 1;
-            }
-        }
-
-        /* New styles for enhanced interactivity */
-        .employee-card:hover .card-face-front {
-            transform: rotateY(180deg);
-        }
-
-        .employee-card:hover .card-face-back {
-            transform: rotateY(0);
-        }
-
-        .card-face {
-            position: absolute;
-            transition: transform 0.5s ease;
-        }
-
-        .employee-card {
-            position: relative;
-            perspective: 500px;
-            margin: 10px;
-            transform-style: preserve-3d;
-            transition: transform 0.5s ease;
-        }
-
-        .employee-card:hover {
-            transform: translateY(-10px);
-.employee-card:hover img,
-.employee-card:hover .card-face-front {
-    transform: scale(1.2);
-    transition: transform 0.5s ease;
-}
-        }
-
-        .employee-card:nth-child(odd) {
-            animation: slideInLeft 1s ease;
-        }
-
-        .employee-card:nth-child(even) {
-            animation: slideInRight 1s ease;
-        }
-
-        @keyframes slideInLeft {
-            0% {
-                transform: translateX(-100%);
-            }
-            100% {
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes slideInRight {
-            0% {
-                transform: translateX(100%);
-            }
-            100% {
-                transform: translateX(0);
-            }
-        }
-    </style>
+    <title>About Us - 1v1 But You're A Bee</title>
 </head>
 <body>
     <header>
         <div class="navbar">
-            <div style="display: flex; justify-content: center; width: 100%;">
-                <a href="index.html">Home</a>
-                <a href="aboutUs.html">About Us</a>
-                <a href="timeShooterGame.zip" download>Download</a>
-            </div>
+            <a href="index.html">Home</a>
+            <a href="aboutUs.html">About Us</a>
+            <a href="1v1-ButYoureABee.zip" download>Download Game</a>
         </div>
-        <h1 style="text-align: center;">About Us</h1>
-        <style>
-            .employee-cards-container {
-                display: flex;
-                justify-content: center;
-            }
-        
-            .employee-card {
-                flex: 1 1 300px;
-                max-width: 300px;
-                height: 400px;
-                perspective: 500px;
-                margin: 10px;
-            }
-        </style>
-
+        <h1>About Us</h1>
+    </header>
+    <main>
         <div class="employee-cards-container">
             <div class="employee-card">
                 <div class="card-face card-face-front">
-                    <img src="goldenRetriever-Aiden.jpg" alt="Aiden Photo" class="employee-photo">
-                    <div class="employee-info">
-                        <h2 class="employee-name">Aiden Duncan</h2>
-                        <h3 class="employee-title">Artist</h3>
-                        <p class="employee-description">We would like to give a special thanks to Aiden for all of the amazing work he did for the art that he made! He made some crazy cool art!</p>
-                    </div>
-                </div>
-                <div class="card-face card-face-back">
-                    <!-- Add content for the back of the card here -->
-                </div>
-            </div>
-            <div class="employee-card">
-                <div class="card-face card-face-front">
-                    <img src="spencer-dog.jpg" alt="Spencer Photo" class="employee-photo">
-                    <div class="employee-info">
-                        <h2 class="employee-name">Spencer Sims</h2>
-                        <h3 class="employee-title">Developer & Soundtrack Design</h3>
-                        <p class="employee-description">Spencer, was one of the key backbones of this project, and not only helped create the soundtrack and developed mechanics for <br>the game.  </p>
-                    </div>
-                </div>
-                <div class="card-face card-face-back">
-                    <!-- Add content for the back of the card here -->
-                </div>
-            </div>
-
-            <div class="employee-card">
-                <div class="card-face card-face-front">
-                    <img src="braedon-dog.jpg" alt="Braedon Photo" class="employee-photo">
+                    <img src="braedon.jpg" alt="Braedon Stoudt Photo" class="employee-photo">
                     <div class="employee-info">
                         <h2 class="employee-name">Braedon Stoudt</h2>
-                        <h3 class="employee-title">Lead Developer & Game Design Director</h3>
-                        <p class="employee-description">Braedon was the lead developer and game design lead, but since I'm the one making this, I will let the team say the rest.</p>
+                        <h3 class="employee-title">Lead Developer</h3>
+                        <p class="employee-description">Braedon is the sole developer behind "1v1 But You're A Bee", crafting its intricate mechanics and immersive multiplayer experience.</p>
                     </div>
                 </div>
                 <div class="card-face card-face-back">
-                    <!-- Add content for the back of the card here -->
+                    <p>Expert in Unity and multiplayer networking.</p>
                 </div>
             </div>
 
-            <div class="employee-card">
-                <div class="card-face card-face-front">
-                    <img src="jacob dog photo.jpg" alt="Jacob Photo" class="employee-photo">
-                    <div class="employee-info">
-                        <h2 class="employee-name">Jacob Snow</h2>
-                        <h3 class="employee-title">Lead Artist & Map Design</h3>
-                        <p class="employee-description">Jacob, made the player animations and helped with the level design, along with map graphics and art. He truley made the game look great with the time he had!</p>
-                    </div>
-                </div>
-                <div class="card-face card-face-back">
-                    <!-- Add content for the back of the card here -->
-                </div>
-            </div>
+            <!-- Add more employee cards as needed -->
         </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
